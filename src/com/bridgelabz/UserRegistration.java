@@ -16,6 +16,10 @@ public class UserRegistration {
 
     private static final String PhonenumberPattern ="^([\\+]?91)?[6-9]{1}[0-9]{9}$";
 
+    // giving the pattern for Passwords
+
+    private static final String PasswordPattern ="^.{8,}$";
+
     Scanner scanner = new Scanner(System.in);
 
     // Creating the method  for first name
@@ -44,6 +48,9 @@ public class UserRegistration {
             lastnameValidator();
         }
     }
+
+    // creating method for mail
+
     public void emailValidator() {
         System.out.println("Enter the email id :");
         String input = scanner.next();
@@ -55,6 +62,9 @@ public class UserRegistration {
             emailValidator();
         }
     }
+
+    //creating method for phone number
+
     public void phoneNumber(){
         System.out.println("Enter Phone Number");
         String input = scanner.next();
@@ -66,6 +76,19 @@ public class UserRegistration {
         }
     }
 
+    //creating method for password
+
+    public void passwordValidator() {
+        System.out.println("Enter the password:");
+        String input = scanner.next();
+        if (input.matches(PasswordPattern)) {
+            System.out.println("password sucessfully entered");
+        }
+        else {
+            System.out.println("**Invalid password**try again**");
+            passwordValidator();
+        }
+    }
         //creating main method
 
     public static void main(String[] args) {
@@ -78,6 +101,7 @@ public class UserRegistration {
         user.lastnameValidator();
         user.emailValidator();
         user.phoneNumber();
+        user.passwordValidator();
     }
 }
 
