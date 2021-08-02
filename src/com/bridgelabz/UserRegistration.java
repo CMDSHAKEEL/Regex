@@ -6,12 +6,12 @@ public class UserRegistration {
 
     //giving the pattern as per the Regex rule
 
-    private static final String  NamePattern = "^[A-Z][a-zA-Z]{2,}$";
+    private static final String  NamePattern = "^[A-Z][a-zA-Z]{3,}$";
     Scanner scanner = new Scanner(System.in);
 
     // Creating the method  for first name
 
-    public void FirstnameValidator()
+    public void firstnameValidator()
     {
         System.out.println("Enter First Name");
         String input = scanner.next();
@@ -20,9 +20,22 @@ public class UserRegistration {
         }
         else {
             System.out.println("**Invalid First name**try again**");
-            FirstnameValidator();
+            firstnameValidator();
         }
     }
+     // ceration the method of Last name
+
+    public void lastnameValidator() {
+        System.out.println("Enter the last name:");
+        String input = scanner.next();
+        if (input.matches(NamePattern)) {
+            System.out.println("last name sucessfully entered");
+        } else {
+            System.out.println("**Invalid last name**try again**");
+            lastnameValidator();
+        }
+    }
+
         //creating main method
 
     public static void main(String[] args) {
@@ -30,7 +43,9 @@ public class UserRegistration {
         UserRegistration user = new UserRegistration();
 
         // calling the method thorugh the object
-        user.FirstnameValidator();
+
+        user.firstnameValidator();
+        user.lastnameValidator();
     }
 }
 
