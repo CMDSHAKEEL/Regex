@@ -12,6 +12,10 @@ public class UserRegistration {
 
     private static final String EmailPattern = "^[0-9a-zA-Z]+([.\\-+]?[a-zA-Z0-9]+)?\\@[0-9a-zA-Z]+.[a-zA-Z]{2,4}(.[a-zA-Z]{2,})*$";
 
+    // giving the pattern for Phone NUmbers
+
+    private static final String PhonenumberPattern ="^([\\+]?91)?[6-9]{1}[0-9]{9}$";
+
     Scanner scanner = new Scanner(System.in);
 
     // Creating the method  for first name
@@ -51,6 +55,16 @@ public class UserRegistration {
             emailValidator();
         }
     }
+    public void phoneNumber(){
+        System.out.println("Enter Phone Number");
+        String input = scanner.next();
+        if(input.matches(PhonenumberPattern)) {
+            System.out.println("Phone number Entered sucessfully");
+        }
+        else{
+            System.out.println("**Invalid Phone num**try again**");
+        }
+    }
 
         //creating main method
 
@@ -63,6 +77,7 @@ public class UserRegistration {
         user.firstnameValidator();
         user.lastnameValidator();
         user.emailValidator();
+        user.phoneNumber();
     }
 }
 
