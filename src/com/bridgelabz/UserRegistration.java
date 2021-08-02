@@ -6,7 +6,12 @@ public class UserRegistration {
 
     //giving the pattern as per the Regex rule
 
-    private static final String  NamePattern = "^[A-Z][a-zA-Z]{3,}$";
+    private static final String  NamePattern = "^[A-Z][a-zA-Z]{2,}$";
+
+    // giving the pattern for mail in this pattern we can use special characters
+
+    private static final String EmailPattern = "^[0-9a-zA-Z]+([.\\-+]?[a-zA-Z0-9]+)?\\@[0-9a-zA-Z]+.[a-zA-Z]{2,4}(.[a-zA-Z]{2,})*$";
+
     Scanner scanner = new Scanner(System.in);
 
     // Creating the method  for first name
@@ -35,6 +40,17 @@ public class UserRegistration {
             lastnameValidator();
         }
     }
+    public void emailValidator() {
+        System.out.println("Enter the email id :");
+        String input = scanner.next();
+        if (input.matches(EmailPattern)) {
+            System.out.println("email id sucessfully entered");
+        }
+        else {
+            System.out.println("**Invalid email id**try again**");
+            emailValidator();
+        }
+    }
 
         //creating main method
 
@@ -46,6 +62,7 @@ public class UserRegistration {
 
         user.firstnameValidator();
         user.lastnameValidator();
+        user.emailValidator();
     }
 }
 
