@@ -16,9 +16,9 @@ public class UserRegistration {
 
     private static final String PhonenumberPattern ="^([\\+]?91)?[6-9]{1}[0-9]{9}$";
 
-    // giving the pattern for Passwords
+    // giving the pattern for Passwords having charchters
 
-    private static final String PasswordPattern ="^.{8,}$";
+    private static final String PasswordPattern ="^(?=.*[a-z])(?=.*[A-Z]).{8,}$";
 
     Scanner scanner = new Scanner(System.in);
 
@@ -76,7 +76,7 @@ public class UserRegistration {
         }
     }
 
-    //creating method for password
+    //creating method for password HAVING atlest 1 upper case
 
     public void passwordValidator() {
         System.out.println("Enter the password:");
@@ -92,10 +92,10 @@ public class UserRegistration {
         //creating main method
 
     public static void main(String[] args) {
-        System.out.println("Welcome to user registration");
+        System.out.println("********** Welcome to user registration **********");
         UserRegistration user = new UserRegistration();
 
-        // calling the method thorugh the object
+        // calling the method through the object(user)
 
         user.firstnameValidator();
         user.lastnameValidator();
