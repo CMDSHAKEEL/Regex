@@ -18,7 +18,7 @@ public class UserRegistration {
 
     // giving the pattern for Passwords having charchters
 
-    private static final String PasswordPattern ="^(?=.*[a-z])(?=.*[A-Z]).{8,}$";
+    private static final String PasswordPattern ="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$";
 
     Scanner scanner = new Scanner(System.in);
 
@@ -76,7 +76,7 @@ public class UserRegistration {
         }
     }
 
-    //creating method for password HAVING atlest 1 upper case
+    //creating method for password HAVING atlest 1 numeric value case
 
     public void passwordValidator() {
         System.out.println("Enter the password:");
