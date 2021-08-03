@@ -16,9 +16,9 @@ public class UserRegistration {
 
     private static final String PhonenumberPattern ="^([\\+]?91)?[6-9]{1}[0-9]{9}$";
 
-    // giving the pattern for Passwords having charchters
+    // giving the pattern for Passwords having  special charchters
 
-    private static final String PasswordPattern ="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$";
+    private static final String PasswordPattern ="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?!(?:.*[!@#$%^&*]){2})[a-zA-Z0-9!@#$%^&*]{8,}$";
 
     Scanner scanner = new Scanner(System.in);
 
@@ -76,7 +76,7 @@ public class UserRegistration {
         }
     }
 
-    //creating method for password HAVING atlest 1 numeric value case
+    //creating method for password HAVING special charcters
 
     public void passwordValidator() {
         System.out.println("Enter the password:");
